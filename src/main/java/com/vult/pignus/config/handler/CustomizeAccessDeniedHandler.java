@@ -21,7 +21,7 @@ public class CustomizeAccessDeniedHandler implements AccessDeniedHandler {
                        AccessDeniedException e)
             throws IOException, ServletException {
         httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
-        JsonResult result = ResultTool.fail(ResultCode.NO_PERMISSION);
+        JsonResult<Void> result = ResultTool.fail(ResultCode.NO_PERMISSION);
         httpServletResponse.setContentType("text/json;charset=utf-8");
         httpServletResponse.getWriter().write(JSON.toJSONString(result));
     }
